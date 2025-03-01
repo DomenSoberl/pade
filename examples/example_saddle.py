@@ -28,3 +28,4 @@ model = classifier.fit(data, classes)
 # Visualize the learned model.
 tree.plot_tree(model, feature_names=['x', 'y'], class_names=class_names, filled=True)
 plt.show()
+
