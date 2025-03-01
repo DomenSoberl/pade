@@ -1,6 +1,10 @@
 # Pad&#233;
 A Python implementation of the Pad&#233; qualitative modeling algorithm published in [1].
 
+## Installing the library
+
+`pip install pade@git+https://github.com/DomenSoberl/pade`
+
 ## Using the library
 
 Import `pade.py` and call:
