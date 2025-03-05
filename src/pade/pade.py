@@ -140,3 +140,27 @@ def enumerate_q_labels(q_labels: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
 
     return classes, class_names
 
+
+def name_to_directions(class_name, attributes=None):
+    directions = {}
+
+    if attributes is not None:
+        for attribute in attributes:
+            directions[attribute] = 0
+
+    start = class_name.find('(')
+    end = class_name.find(')')
+
+    if start == -1 or end == -1:
+        return directions
+
+    for attribute in class_name[start+1:end].split(','):
+        attribute = attribute.strip()
+        sign = attribute[0]
+        name = attribute[1:]
+        if sign == '+':
+            directions[name] = 1
+        elif sign == '-':
+            directions[name] = -1
+
+    return directions
